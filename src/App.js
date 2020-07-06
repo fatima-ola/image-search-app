@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/Header/Header.js';
 import SearchField from './components/SearchField/SearchField.js';
+import Images from './components/Images/Images';
 
 function App() {
-  const [setTerm] = useState('');
-
-  let onKeyPress = (e) => {
-    if (e.keyCode === 13 || e.charCode === 13) setTerm(e.target.value);
-  };
-
   return (
     <div>
       <Header />
-      <SearchField onPress={onKeyPress} />
+      <SearchField />
+      <div classsName='container'>
+        <Images />
+      </div>
     </div>
   );
 }
