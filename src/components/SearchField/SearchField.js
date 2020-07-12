@@ -1,11 +1,15 @@
 import React from 'react';
 import './SearchField.css';
 
-const SearchField = () => {
+const SearchField = ({ onPress }) => {
   return (
     <div>
       <div className='search-block'>
-        <input type='search' placeholder='Beautiful photo?' />
+        <input
+          onKeyPress={onPress}
+          type='search'
+          placeholder='Beautiful photo?'
+        />
         <div className='icon'></div>
       </div>
     </div>

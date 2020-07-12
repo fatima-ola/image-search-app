@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Images from './Images';
 
-class ImageItem extends Component {
-  render() {
-    const { url, width, height, name } = this.props.user;
-    return (
-      <div className='cover'>
-        <img src={url} alt='' width={width} height={height} />
-
-        <h6 style={{ color: 'black' }}>{name}</h6>
-      </div>
-    );
+function ImageItem({ response }) {
+  let photosToRender;
+  if (response) {
+    photosToRender = response.map((res, i) => {
+      return (
+        <div>
+          <Images
+            key={i}
+            likes={response[i].likes}
+            description={response[i].alt_description}
+            url={response[i].urls['regular']}
+            user={response[i].user['name']}
+          />
+        </div>
+      );
+    });
   }
+  return <div className='row'>{photosToRender}</div>;
 }
 
 export default ImageItem;

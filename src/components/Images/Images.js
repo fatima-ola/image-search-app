@@ -1,47 +1,33 @@
-import React, { Component } from 'react';
-import ImageItem from './ImageItem';
+import React from 'react';
 
-class Images extends Component {
-  state = {
-    users: [
-      {
-        id: '112126428',
-        name: 'Distracted Boyfriend',
-        url: 'https://i.imgflip.com/1ur9b0.jpg',
-        width: 400,
-        height: 500,
-      },
-      {
-        id: '87743020',
-        name: 'Two Buttons',
-        url: 'https://i.imgflip.com/1g8my4.jpg',
-        width: 400,
-        height: 500,
-      },
-      {
-        id: '129242436',
-        name: 'Change My Mind',
-        url: 'https://i.imgflip.com/24y43o.jpg',
-        width: 400,
-        height: 500,
-      },
-    ],
-  };
-  render() {
-    return (
-      <div style={imageStyle}>
-        {this.state.users.map((user) => (
-          <ImageItem key={user.id} user={user} />
-        ))}
-      </div>
-    );
-  }
+function Images({ description, likes, user, url }) {
+  return (
+    <div>
+      <img src={url} alt='' title='' style={imgstyle} />
+      <dl style={captionstyle}>
+        <dt>Image</dt>
+        <dd>Photo by {user}</dd>
+        <dt>Description</dt>
+        <dd>{description}</dd>
+        <dt>Likes</dt>
+        <dd>
+          {likes} <i className='fas fa-heart'></i>{' '}
+        </dd>
+      </dl>
+    </div>
+  );
 }
 
-const imageStyle = {
-  margin: '1rem 0.5rem 0.5rem 4rem',
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gridGap: '3rem',
+const imgstyle = {
+  margin: '1rem 5rem 1rem 5rem',
+  borderRadius: '4px',
+  height: '350px',
+  width: '350px',
+};
+
+const captionstyle = {
+  margin: '1rem 5rem 1rem 5rem',
+  borderRadius: '4px',
+  textAlign: 'center',
 };
 export default Images;
