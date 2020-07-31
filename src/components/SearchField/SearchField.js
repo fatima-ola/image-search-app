@@ -1,16 +1,16 @@
 import React from 'react';
-import './SearchField.css';
+import classes from './SearchField.css';
 
 const SearchField = ({ onPress }) => {
   return (
     <div>
-      <div className='search-block'>
+      <div className={classes.search_block}>
         <input
           onKeyPress={onPress}
           type='search'
           placeholder='Beautiful photo?'
         />
-        <div className='icon'></div>
+        <div className={classes.icon}></div>
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './images.css';
 
 function Images({ description, likes, user, url }) {
   return (
     <div>
-      <img src={url} alt='' title='' style={imgstyle} />
-      <dl style={captionstyle}>
+      <img src={url} alt='' title='' className={styles.img} />
+      <dl className={styles.caption}>
         <dt>Image</dt>
         <dd>Photo by {user}</dd>
         <dt>Description</dt>
@@ -18,16 +19,4 @@ function Images({ description, likes, user, url }) {
   );
 }
 
-const imgstyle = {
-  margin: '1rem 5rem 1rem 5rem',
-  borderRadius: '4px',
-  height: '350px',
-  width: '350px',
-};
-
-const captionstyle = {
-  margin: '1rem 5rem 1rem 5rem',
-  borderRadius: '4px',
-  textAlign: 'center',
-};
 export default Images;

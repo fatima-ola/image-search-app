@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import styling from './App.css';
 import Header from './components/Header/Header.js';
 import SearchField from './components/SearchField/SearchField.js';
 import ImageItem from './components/Images/ImageItem';
@@ -33,10 +33,10 @@ function App() {
   }
 
   return (
-    <div>
+    <div className={styling.body}>
       <Header />
       <SearchField onPress={onKeyPress} />
-      <div classsName='container'>
+      <div classsName={styling.container}>
         <ImageItem response={photos} />
       </div>
     </div>
